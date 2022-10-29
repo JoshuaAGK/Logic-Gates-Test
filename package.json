@@ -1,0 +1,25 @@
+{
+  "name": "better-logic-gates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaAGK/Better-Logic-Gates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaAGK/Better-Logic-Gates/issues"
+  },
+  "homepage": "https://github.com/JoshuaAGK/Better-Logic-Gates#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "socket.io": "^4.5.3",
+    "uuid": "^9.0.0"
+  }
+}
