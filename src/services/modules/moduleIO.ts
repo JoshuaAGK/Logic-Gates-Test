@@ -18,7 +18,9 @@ class ModuleIO implements ModuleIOInterface {
         this.value = value;
         if (this.direction === "output") {
             for (let output of this.outputs) {
-                output.setValue(value);
+                if (output.value !== value) {
+                    output.setValue(value);
+                }
             }
         } else {
             this.parentModule.calculate();
