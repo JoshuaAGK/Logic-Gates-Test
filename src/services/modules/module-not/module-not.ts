@@ -1,6 +1,6 @@
 import Module from "../module.js";
 
-class ModuleNot extends Module implements ModuleNotInterface {
+class ModuleNot extends Module {
     constructor() {
         super();
         this.type = "ModuleNot";

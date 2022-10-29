@@ -20,12 +20,4 @@ declare global {
         makeIO: (direction: "input" | "output", quantity: number) => Array<ModuleIOInterface>;
         calculate: () => void;
     }
-
-    interface ModuleAndInterface extends ModuleInterface {
-        calculate: () => void;
-    }
-
-    interface ModuleNotInterface extends ModuleInterface {
-        calculate: () => void;
-    }
 }

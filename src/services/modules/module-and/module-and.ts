@@ -1,6 +1,6 @@
 import Module from "../module.js";
 
-class ModuleAnd extends Module implements ModuleAndInterface {
+class ModuleAnd extends Module {
     constructor(inputQuantity: number = 2) {
         super();
         this.type = "ModuleAnd";

@@ -24,10 +24,6 @@ class Module implements ModuleInterface {
     calculate(): void {
         // Override me!
     };
-
-    // connect(): void {
-
-    // };
 }
 
 export default Module;
