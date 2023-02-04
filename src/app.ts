@@ -1,16 +1,38 @@
 import * as modules from "./services/modules";
 
-let and1 = new modules.ModuleAnd;
 let not1 = new modules.ModuleNot;
 let not2 = new modules.ModuleNot;
-let not3 = new modules.ModuleNot;
-let or1 = new modules.ModuleOr;
-let xor1 = new modules.ModuleXor(3);
 
+let counter1 = new modules.ModuleCounter;
 
+not1.outputs[0].connect(counter1.inputs[0]);
 
-not1.outputs[0].connect(xor1.inputs[0]);
-// not2.outputs[0].connect(xor1.inputs[1]);
-not3.outputs[0].connect(xor1.inputs[2]);
+console.log(counter1);
 
-console.log(xor1);
+not1.outputs[0].disconnect(counter1.inputs[0]);
+
+console.log(counter1);
+
+not1.outputs[0].connect(counter1.inputs[0]);
+
+console.log(counter1);
+
+not1.outputs[0].disconnect(counter1.inputs[0]);
+
+console.log(counter1);
+
+not1.outputs[0].connect(counter1.inputs[0]);
+
+console.log(counter1);
+
+not1.outputs[0].disconnect(counter1.inputs[0]);
+
+console.log(counter1);
+
+not2.outputs[0].connect(counter1.inputs[1]);
+
+console.log(counter1);
+
+not1.outputs[0].connect(counter1.inputs[0]);
+
+console.log(counter1);
