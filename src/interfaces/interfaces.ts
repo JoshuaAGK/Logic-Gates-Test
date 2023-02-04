@@ -4,7 +4,8 @@ declare global {
     interface ModuleIOInterface {
         value: number;
         parentModule: ModuleInterface;
-        outputs?: any;
+        outboundConnections?: Array<ModuleIOInterface>;
+        inboundConnection?: ModuleIOInterface;
         direction: "input" | "output";
 
         setValue: (value: number) => void;
