@@ -1,6 +1,4 @@
-const modules = require("./services/modules/moduleBundler");
-
-// require("./api/index.js");
+import * as modules from "./services/modules";
 
 let and1 = new modules.ModuleAnd;
 let not1 = new modules.ModuleNot;
