@@ -1,6 +1,19 @@
-import ModuleAnd from "./module-and/module-and.js";
-import ModuleNot from "./module-not/module-not.js";
-import ModuleOr from "./module-or/module-or.js";
-import ModuleXor from "./module-xor/module-xor.js";
+import { Dirent, readdirSync } from "fs";
 
-export { ModuleAnd, ModuleNot, ModuleOr, ModuleXor }
+function getDirectories(source: string) {
+    let dirents: Array<Dirent> = readdirSync(source, { withFileTypes: true })
+    dirents = dirents.filter(dirent => dirent.isDirectory() && !dirent.name.includes(" copy") && dirent.name.startsWith("module"));
+    return dirents.map(dirent => dirent.name);
+}
+
+function camelise(string: string) {
+    return string.replace(/-./g, x => x[1].toUpperCase())
+}
+
+const moduleDirectories = getDirectories(__dirname);
+const moduleNames = moduleDirectories.map(x => x.slice(0, 1).toUpperCase() + camelise(x).slice(1));
+
+for (const i in moduleDirectories) {
+    const directory: string = "./" + moduleDirectories[i];
+    module.exports[moduleNames[i]] = require(directory).default;
+}
