@@ -1,7 +1,7 @@
 import Module from "./module";
 
 class ModuleIO implements ModuleIOInterface {
-    value: number = 0;
+    value: any = 0;
     parentModule: Module;
     direction: "input" | "output";
     outboundConnections?: Array<ModuleIO> = [];
@@ -17,7 +17,7 @@ class ModuleIO implements ModuleIOInterface {
         }
     }
 
-    setValue(value: number): void {
+    setValue(value: any): void {
         this.value = value;
         if (this.direction === "output") {
             for (let output of this.outboundConnections) {
